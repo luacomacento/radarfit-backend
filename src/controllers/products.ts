@@ -37,6 +37,13 @@ class ProductsController {
     await this._productsService.delete(Number(id));
     res.status(204).send();
   }
+
+  public async update(req: Request, res: Response) {
+    const { id } = req.params;
+    const product = req.body as Produto;
+    const updatedProduct = await this._productsService.update(Number(id), product);
+    res.status(200).json(updatedProduct);
+  }
 }
 
 export default ProductsController;

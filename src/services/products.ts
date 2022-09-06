@@ -32,6 +32,12 @@ class ProductsService {
     const success = await Produto.destroy({ where: { id }});
     return !!success;
   }
+
+  public async update(id: number, product: Produto) {
+    await Produto.update({...product}, { where: { id }});
+    const updatedProduct = await Produto.findByPk(id);
+    return updatedProduct;
+  }
 }
 
 export default ProductsService;
