@@ -1,5 +1,6 @@
 import { Op } from "sequelize";
 import Produto from "../database/models/Produto";
+import { NotFoundError } from "../errors";
 
 class ProductsService {
   public async getAll() {
@@ -8,8 +9,11 @@ class ProductsService {
   }
 
   public async getById(id: number) {
-    const products = await Produto.findByPk(id);
-    return products;
+    const product = await Produto.findByPk(id);
+
+    if (!product) throw new NotFoundError("Produto não encontrado");
+
+    return product;
   }
 
   public async search(query: string) {
@@ -30,13 +34,13 @@ class ProductsService {
 
   public async delete(id: number) {
     const success = await Produto.destroy({ where: { id }});
+    if (!success) throw new NotFoundError("Produto não encontrado");
     return !!success;
   }
 
   public async update(id: number, product: Produto) {
-    await Produto.update({...product}, { where: { id }});
-    const updatedProduct = await Produto.findByPk(id);
-    return updatedProduct;
+    const [success] = await Produto.update({...product}, { where: { id }});
+    return !!success;
   }
 }
 

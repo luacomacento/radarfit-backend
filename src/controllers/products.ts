@@ -41,7 +41,8 @@ class ProductsController {
   public async update(req: Request, res: Response) {
     const { id } = req.params;
     const product = req.body as Produto;
-    const updatedProduct = await this._productsService.update(Number(id), product);
+    await this._productsService.update(Number(id), product);
+    const updatedProduct = await this._productsService.getById(Number(id));
     res.status(200).json(updatedProduct);
   }
 }
