@@ -20,7 +20,7 @@ class ProductsService {
     const products = await Produto.findAll({
       where: {
         produto: {
-          [Op.like]: `%${query}%`
+          [Op.iLike]: `%${query}%`
         }
       },
     });
