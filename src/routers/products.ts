@@ -10,6 +10,7 @@ products.get('/find', (req, res) => productsController.search(req, res));
 products.get('/:id', (req, res) => productsController.getById(req, res));
 products.post('/', (req, res) => productsController.create(req, res));
 products.put('/:id', (req, res) => productsController.update(req, res));
+products.patch('/:id', (req, res) => productsController.update(req, res));
 products.delete('/:id', (req, res) => productsController.delete(req, res));
 
 export default products;
