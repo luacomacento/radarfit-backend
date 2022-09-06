@@ -22,6 +22,11 @@ class ProductsService {
     });
     return products;
   }
+
+  public async create(product: Produto) {
+    const newProduct = await Produto.create({...product});
+    return newProduct;
+  }
 }
 
 export default ProductsService;

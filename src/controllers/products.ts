@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import Produto from "../database/models/Produto";
 import { ProductsService } from "../services";
 
 class ProductsController {
@@ -23,6 +24,12 @@ class ProductsController {
     const { q: query } = req.query;
     const products = await this._productsService.search(query as string);
     res.status(200).json(products);
+  }
+
+  public async create(req: Request, res: Response) {
+    const productToCreate = req.body as Produto;
+    const product = await this._productsService.create(productToCreate);
+    res.status(201).json(product);
   }
 }
 
