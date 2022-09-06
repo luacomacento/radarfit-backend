@@ -6,6 +6,10 @@ class ProductsService {
     return products;
   }
 
+  public async getById(id: number) {
+    const products = await Produto.findByPk(id);
+    return products;
+  }
 }
 
 export default ProductsService;

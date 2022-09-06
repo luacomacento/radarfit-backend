@@ -13,6 +13,11 @@ class ProductsController {
     res.status(200).json(products);
   }
 
+  public async getById(req: Request, res: Response) {
+    const { id } = req.params;
+    const product = await this._productsService.getById(Number(id));
+    res.status(200).json(product);
+  }
 }
 
 export default ProductsController;
