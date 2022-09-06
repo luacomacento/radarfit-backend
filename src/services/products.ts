@@ -27,6 +27,11 @@ class ProductsService {
     const newProduct = await Produto.create({...product});
     return newProduct;
   }
+
+  public async delete(id: number) {
+    const success = await Produto.destroy({ where: { id }});
+    return !!success;
+  }
 }
 
 export default ProductsService;
