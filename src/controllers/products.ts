@@ -18,6 +18,12 @@ class ProductsController {
     const product = await this._productsService.getById(Number(id));
     res.status(200).json(product);
   }
+
+  public async search(req: Request, res: Response) {
+    const { q: query } = req.query;
+    const products = await this._productsService.search(query as string);
+    res.status(200).json(products);
+  }
 }
 
 export default ProductsController;
