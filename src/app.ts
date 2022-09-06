@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import Produto from './database/models/Produto';
+import { productsRouter } from './routers';
 
 class App {
   public app: express.Express;
@@ -8,6 +8,8 @@ class App {
   constructor() {
     this.app = express();
     this.config();
+
+    this.app.use('/produtos', productsRouter);
   }
 
   private config():void {
