@@ -4,7 +4,6 @@
   "description": "",
   "main": "./build/server",
   "scripts": {
-    "build": "npx tsc",
     "test": "ts-mocha src/tests/unit/**/*.ts",
     "test:coverage": "nyc ts-mocha src/tests/unit/**/*.ts",
     "dev": "tsnd src/server.ts",
