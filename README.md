@@ -137,6 +137,20 @@ você vai precisar adicionar as seguintes variáveis de ambiente no seu ``.env``
 `PGPORT`: porta do banco de dados
 
 `PORT`: porta para rodar a API
+## Rodando os testes
+
+Para rodar todos os testes:
+
+```bash
+  npm run test
+```
+
+Para verificar a cobertura de testes:
+
+```bash
+  npm run test:coverage
+```
+
 ## Autores
 
 - [@luacomacento](https://www.github.com/luacomacento)
