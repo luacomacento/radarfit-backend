@@ -6,7 +6,7 @@ module.exports = {
     'src/database/config',
     'src/database/migrations',
     'src/database/seeders',
-    'src/middlewares',
+    'src/middlewares/validations.ts',
     'src/routers',
     'src/app.ts',
     'src/server.ts'
