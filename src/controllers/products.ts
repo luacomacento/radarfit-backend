@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import Produto from "../database/models/Produto";
-import { ProductsService } from "../services";
+import { IProductsService } from "../interfaces";
 
 class ProductsController {
   private _productsService;
 
-  constructor(productsService: ProductsService) {
+  constructor(productsService: IProductsService<Produto>) {
     this._productsService = productsService;
   }
 

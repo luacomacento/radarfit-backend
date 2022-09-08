@@ -1,8 +1,9 @@
 import { Op } from "sequelize";
 import Produto from "../database/models/Produto";
 import { NotFoundError } from "../errors";
+import { IProductsService } from "../interfaces";
 
-class ProductsService {
+class ProductsService implements IProductsService<Produto> {
   public async getAll() {
     const products = await Produto.findAll();
     return products;
