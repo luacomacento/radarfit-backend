@@ -6,7 +6,7 @@ cujo objetivo era criar uma **API JSON Restful** em **Node**,
 que utilizasse os métodos ``GET``, ``POST``, ``PUT``, ``PATCH`` e ``DELETE``.
 
 Como bônus, foram desenvolvidos também testes unitários para as camadas de
-``controllers``, ``services`` e ``middlewares`` (com exceção dos middlewares de validação).
+``controllers``, ``services`` e ``middlewares``.
 
 
 ## Deploy
